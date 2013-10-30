@@ -1,0 +1,36 @@
+/*!
+Theme Name:
+Theme URI:
+Description:
+Author: 
+Author URI: 
+Version: 1.0
+Tags: 
+*/
+
+@import "normalize";
+@import "mixins";
+@import "grid";
+@import "colors";
+@import "fonts";
+
+*,
+*:after,
+*:before {
+  @include box-sizing(border-box);
+  // Color change transition
+  @include transition(color 100ms linear, background-color 100ms linear);
+}
+i, i:after, i:before {
+  // Transition fix for glyph icons
+  @include transition(none);
+}
+
+* img {
+  max-width: 100%;
+  height: auto;
+}
+
+body {
+  background-color: $bg-color;
+}
