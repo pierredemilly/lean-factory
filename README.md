@@ -20,6 +20,7 @@ Sass imports include:
   * useful mixins from Compass
   * color and font variables files
   * a 960px 12cols grid system
+  * Glyphicons from Bootstrap 2
 
 Javascript &amp; Coffeescript
 -----------------------------
