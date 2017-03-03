@@ -1,5 +1,5 @@
 // Hide text in a block
-@mixin hide-text{
+@mixin hide-text {
     font: 0/0 a;
     text-shadow: none;
     color: transparent;
@@ -82,9 +82,58 @@
   transition: $transitions;
 }
 @mixin transitionDuration($duration) {
-	-webkit-transition-duration: $duration;
-	-moz-transition-duration: $duration;
-	-o-transition-duration: $duration;
-	-ms-transition-duration: $duration;
-	transition-duration: $duration;
+  -webkit-transition-duration: $duration;
+  -moz-transition-duration: $duration;
+  -o-transition-duration: $duration;
+  -ms-transition-duration: $duration;
+  transition-duration: $duration;
+}
+
+// Gradients
+@mixin linear-gradient($fromColor, $toColor) {
+  background-color: $toColor; /* Fallback Color */
+  background: -webkit-linear-gradient(left, $fromColor, $toColor); /* Chrome 10+, Saf5.1+, iOS 5+ */
+  background:    -moz-linear-gradient(right, $fromColor, $toColor); /* FF3.6 */
+  background:     -ms-linear-gradient(right, $fromColor, $toColor); /* IE10 */
+  background:      -o-linear-gradient(right, $fromColor, $toColor); /* Opera 11.10+ */
+  background:         linear-gradient(to right, $fromColor, $toColor);
+  filter: progid:DXImageTransform.Microsoft.gradient(GradientType=1,StartColorStr='#{$fromColor}', EndColorStr='#{$toColor}');
+}
+
+// Placeholder for input
+@mixin placeholder($properties) {
+  &::-webkit-input-placeholder {
+     color: red;
+  }
+
+  &:-moz-placeholder { /* Firefox 18- */
+     color: red;
+  }
+
+  &::-moz-placeholder {  /* Firefox 19+ */
+     color: red;
+  }
+
+  &:-ms-input-placeholder {
+     color: red;
+  }
+}
+
+// Disable selection
+@mixin noselect {
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+@mixin reselect {
+  -webkit-touch-callout: all;
+  -webkit-user-select: all;
+  -khtml-user-select: all;
+  -moz-user-select: all;
+  -ms-user-select: all;
+  user-select: all;
 }
